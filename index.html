@@ -17,28 +17,89 @@
 .header {
 overflow: hidden;
 background: black;
-padding: 10px;
 text-align: center;
 font-family: Alegreya Sans SC;
 font-style: normal;
 
 }
+
+.header a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.header .icon {
+  display: none;
+}
+
+
+.header a:hover,{
+  background-color: #555;
+  color: white;
+}
+
+
+@media screen and (max-width: 600px) {
+  .header a{
+    display: none;
+  }
+  .header a.icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header.responsive {position: relative;}
+  .header.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .header.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header.responsive {float: none;}
+  .header.responsive  {position: relative;}
+  .header.responsive {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
 .row {  
   display: flex;
   flex-wrap: wrap;
 }
-.header a {
-  float: left;
-  display: block;
-  text-align: center;
-  padding: 14px 70px;
+.row2 {  
+  display: flex;
+  flex-wrap: wrap;
+  padding:20px;
 }
-@media screen and (max-width: 400px) {
-  .header a {
-    float: none;
-    width:100%;
-  }
+.row3 {  
+  display: flex;
+  flex-wrap: wrap;
+  padding-left:160px;
+  padding-right:160px;
 }
+.row4 {  
+  display: flex;
+  flex-wrap: wrap;
+  padding-top:80px;
+}
+
 @media screen and (max-width: 700px) {
   .row {   
     flex-direction: column;
@@ -48,9 +109,7 @@ a:link, a:visited {
   text-decoration: none;
   color:white;
 }
-a:hover {
-  color: #42bff4;
-}
+
 .ca::first-letter {
   font-size: 20px;
 }
@@ -80,47 +139,41 @@ width:100%;
 }
 
 .outercontainer1
-{   flex: 70%;
-	width:50%;
+{   flex: 50%;
 	float:left;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.33);
-	height:350px;
-}
-
-.outercontainer2
-{   flex: 70%;
-	width:32.75%;
-	float:left;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.33);
-	height:350px;
+	padding:10px;
 }
 .outercontainer3
-{   flex: 70%;
-	width:100%;
+{   flex: 33.33%;
 	float:left;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.33);
-	height:500px;
-	border-radius:10px;
-	background: #003b77;
+	padding:10px;
 }
 .outercontainer4
-{   flex: 70%;
-	width:100%;
-	height:300px;
-	background: #808080;
+{   flex: 100%;
+	float:left;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.33);
+	border-radius:10px;
+	background: #003b77;
+	
 }
 .outercontainer5
-{   flex: 70%;
-	width:100%;
+{
+	flex: 100%;
+	background: #808080;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.outercontainer6
+{   flex: 100%;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.33);
 	height:10px;
 	background: #003b77;
 }
-.outercontainer6
+.outercontainer7
 {   flex: 70%;
-	width:100%;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.33);
-	height:50px;
     background: #000000;	
 }
 .btn
@@ -179,18 +232,23 @@ font-family: Montserrat;font-size: 20px;font-weight:500;color:#101c73;background
   padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.33);
 }
+.main4 {   
+  flex: 100%;
+  background-color: white;
+  padding: 10px;
+}
 </style>
 </head>
 <body>
 <div class="row">
 <div class="cont" >
-<div class="header">
-<a class="ca" style="font-size:18px;font-weight=800;" href="https://leaderclasses.com">LEADERCLASSES</a>
-<a class="ca" style="font-size:16px;" href="https://leaderclasses.com/programs">PROGRAM</a>
-<a class="ca" style="font-size:16px;" href="https://leaderclasses.com/about">ABOUT</a>
-<a class="ca" style="font-size:16px;" href="https://leaderclasses.com/faq2/">FAQ</a>
-<a class="ca" style="font-size:16px;" href="">CAREERS</a>
-<a class="ca" style="font-size:16px;" href="https://leaderclasses.com/iump-login/">LOGIN</a>
+<div class="header" id="head">
+<a class="ca" style="font-size:18px;padding-left:200px;font-weight=800;" href="https://leaderclasses.com">LEADERCLASSES</a>
+<a class="ca" style="font-size:14px;padding-left:500px;" href="https://leaderclasses.com/programs">PROGRAM</a>
+<a class="ca" style="font-size:14px;padding-left:50px;" href="https://leaderclasses.com/about">ABOUT</a>
+<a class="ca" style="font-size:14px;padding-left:50px;" href="https://leaderclasses.com/faq2/">FAQ</a>
+<a class="ca" style="font-size:14px;padding-left:50px;" href="">CAREERS</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 <p style="padding-left:100px;padding-right:100px;padding-bottom:20px;text-align:center;"><span style="font-size:22px" ><strong>Leader Classes</span></strong>
 <span style="font-size:22px">&nbsp;ha</span><span style="font-size: 24px;">rnesses the world's best Career Advancement&nbsp;</span>
@@ -512,8 +570,7 @@ font-family: Montserrat;font-size: 20px;font-weight:500;color:#101c73;background
 <div>
 <p class="cap" style="font-size: 30px;font-weight:400;color:#101c73;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><span><strong>distinguished entrepreneurs</strong></p>
 <p style="font-size: 27px;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>like</strong></p> </div>
- <div style="padding-left:100px;padding-right:50px;">
- 
+  
 <div class="row">
 
   <div class="main">
@@ -549,20 +606,27 @@ font-family: Montserrat;font-size: 20px;font-weight:500;color:#101c73;background
 <p class="cap" style="font-size: 30px;color:#101c73;font-family:Georgia;text-align:center;font-weight:1;">100+ topics of strategic importance</p>
 <p style="font-size: 30px;color:#101c73;font-family:Georgia;text-align:center;font-weight:1;">from</p></div>
 
+<div class="row">
 
-<div style="padding-left:100px;padding-right:100px;">
-<img src="https://leaderclasses.com/wp-content/uploads/2019/03/funnel-final1.png" style="width: 100%;" ></div>
-<div style="padding-left:380px;padding-right:380px;">
-<img height="400px" src="https://leaderclasses.com/wp-content/uploads/2019/03/LSPG3.png" style="width: 100%;" >
-</div>
-<div style="line-height: 1.3em ">
+  <div class="main4">
+    <div><img style="width:100%;" src="https://leaderclasses.com/wp-content/uploads/2019/03/funnel-final1.png"></div>
+	</div>
+	</div>
+	<div class="row">
+
+  <div class="main4">
+    <div><img style="width:100%;" src="https://leaderclasses.com/wp-content/uploads/2019/03/LSPG3.png"></div>
+	</div>
+	</div>
+
+<div>
 <p style="font-size: 25px;color:#101c73;font-family:Alegreya SC;font=weight:500;text-align:center;text-transform: capitalize;"><strong>through</strong></p>
 <p class="cap1" style="font-size: 35px;color:#101c73;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>five flagship leadership development programs</strong></p>
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;font-weight:1;text-align:center;text-transform: capitalize;">compromising</p>
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;font-weight:500;text-align:center;text-transform: capitalize;"><strong>high impact, one-day</strong></p>
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;font-weight:1;text-align:center;text-transform: capitalize;">offline</p><br><br></div>
 
-<div style="line-height: 1.3em ">
+<div>
 <p class="cap" style="font-size: 28px;font-weight:400;color:#101c73;font-weight:700;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><span><strong>carrer advancement</strong></span><span style="font-size:px;color:#101c73;font-family:Georgia;text-align:center;text-transform: capitalize;"> &amp;</span><strong> strategic transformation<span style="font-size:30px">(CAST)</span> workshops</strong></p>
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Georgia;font-weight:1;text-align:center;text-transform: capitalize;">&amp;</p>
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;font-weight:1;text-align:center;text-transform: capitalize;">online</p>
@@ -570,72 +634,88 @@ font-family: Montserrat;font-size: 20px;font-weight:500;color:#101c73;background
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;font-weight:1;text-align:center;text-transform: capitalize;">at</p>
 <p class="cap" style="font-size: 28px;font-weight:400;color:#101c73;font-weight:700;font-family:Alegreya SC;text-align:center;text-transform: capitalize;">The Five Levels Of Leadership</p></div>
 
-<div style="padding-left:100px;padding-right:100px;line-height:1em">
-<div class="outercontainer1" >
+<div class="row2">
+<div class="outercontainer1" style="line-height:1em" >
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>Budding Leaders program</strong></p>
 <p class="cap2" style="font-size: 20px;color:#000000;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>level i</strong></p>
 <p style="font-size: 18px;color:#000000;font-family:Alegreya SC;text-align:center;font-weight:1;">For Ambitious Engineers, Chartered Accountants, Commerce, Business, Arts, Sciences <span style="font-size: 20px;color:#000000;font-family:Georgia SC;text-align:center;"> &amp;</span> other Students, aspiring to progress to Director/GM/VP/Higher level roles within 10 years of completing their education.</p>
 <p style="font-size: 18px;color:#000000;font-family:Alegreya SC;text-align:left;font-weight:1;">To<br>(a) Access your Free Introductory Course<br>(b) Explore attending our CAST workshop<br>(c) Explore this program in greater detail</p>
-<button onclick="location.href = 'https://forms.zohopublic.com/virtualoffice5786/form/LCBuddingLeaders1RegistrationForm/formperma/UCBLOxqAN-Oo0EQI32pUMDQeCP_ydjxInt8YzN3zmqQ';" style="position:relative;left:225px;top:10px;" class="btn" type="button">sign up</button>
+<center><button onclick="location.href = 'https://forms.zohopublic.com/virtualoffice5786/form/LCBuddingLeaders1RegistrationForm/formperma/UCBLOxqAN-Oo0EQI32pUMDQeCP_ydjxInt8YzN3zmqQ';" class="btn" type="button">sign up</button></center>
 </div>
-<div class="outercontainer1" style="position:relative;left:20px;line-height:1em">
+
+<div class="outercontainer1" style="line-height:1em">
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>Budding Leaders program</strong></p>
 <p class="cap2" style="font-size: 20px;color:#000000;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>level II</strong></p>
 <p style="font-size:18px;color:#000000;font-family:Alegreya SC;text-align:center;font-weight:1;">For Ambitious MBA students keen on students aspiring to progress to Director/GM/VP/Higher level roles within 10 years of completing their education</p>
-<p style="font-size:18px;color:#000000;font-family:Alegreya SC;text-align:left;font-weight:1;">To<br>(a) Access your Free Introductory Course<br>(b) Explore attending our CAST workshop<br>(c) Explore this program in greater detail</p>
-<button onclick="location.href = 'https://leaderclasses.com/#';" style="position:relative;left:225px;top:25px;" class="btn" type="button">sign up</button>
+<p style="font-size:18px;color:#000000;font-family:Alegreya SC;text-align:left;font-weight:1;">To<br>(a) Access your Free Introductory Course<br>(b) Explore attending our CAST workshop<br>(c) Explore this program in greater detail</p><br>
+<center><button onclick="location.href = 'https://leaderclasses.com/#';" class="btn" type="button">sign up</button></center>
 </div>
 </div>
-<div style="padding-left:100px;padding-right:100px;position:relative;top:50px;">
-<div class="outercontainer2" >
+
+<div class="row2">
+<div class="outercontainer3" >
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>Future Leaders program</strong></p>
 <p class="cap2" style="font-size: 20px;color:#000000;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>level III</strong></p>
 <p style="font-size:18px;color:#000000;font-family:Alegreya SC;text-align:center;font-weight:1;">For ambitious Working Professionals keen on accelerating their success to transition into our Emerging Leaders category within the next 6-8 years.</p>
-<button onclick="location.href = 'https://forms.zohopublic.com/virtualoffice5786/form/LCBuddingLeaders1RegistrationForm/formperma/UCBLOxqAN-Oo0EQI32pUMDQeCP_ydjxInt8YzN3zmqQ';" style="position:relative;left:130px;top:30px;" class="btn" type="button">sign up</button>
+<center><button onclick="location.href = 'https://forms.zohopublic.com/virtualoffice5786/form/LCBuddingLeaders1RegistrationForm/formperma/UCBLOxqAN-Oo0EQI32pUMDQeCP_ydjxInt8YzN3zmqQ';"  class="btn" type="button">sign up</button></center>
 </div>
-<div class="outercontainer2" style="position:relative;left:20px;">
+<div class="outercontainer3">
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>emerging Leaders program</strong></p>
 <p class="cap2" style="font-size: 20px;color:#000000;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>level IV</strong></p>
 <p style="font-size:18px;color:#000000;font-family:Alegreya SC;text-align:center;font-weight:1;">For Director/General Manager/Vice President<span style="font-size: 18px;color:#000000;font-family:Georgia SC;text-align:center;"> & </span> C-Level Professionals keen on advancing their Careers and growing their Businesses while evolving into a renowned Business Leader/Entrepreneur /High-Performing Board Member.</p>
-<button onclick="location.href = 'https://leaderclasses.com/#';" style="position:relative;left:130px;top:8px;" class="btn1" type="button">express interest</button>
-</div>
-<div class="outercontainer2" style="position:relative;left:40px;">
+<center><button onclick="location.href = 'https://leaderclasses.com/#';"  class="btn1" type="button">express interest</button>
+</div></center>
+<div class="outercontainer3" >
 <p class="cap2" style="font-size: 25px;color:#101c73;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>Executive<span style="font-size: 25px;color:#101c73;font-family:Georgia SC;text-align:center;"> &amp;</span> board level Leaders program</strong></p>
 <p class="cap2" style="font-size: 20px;color:#000000;font-family:Alegreya SC;text-align:center;text-transform: capitalize;"><strong>level V</strong></p>
 <p style="font-size:18px;color:#000000;font-family:Alegreya SC;text-align:center;font-weight:1;">For Chairpersons, CEOs, Managing Directors, Board Level Leaders <span style="font-size: 18px;color:#000000;font-family:Georgia SC;text-align:center;"> &amp;</span>  Seasoned Entrepreneurs keen on advancing their Businesses, Industries and Nations while creating their Legacy.</p>
-<button onclick="location.href = 'https://leaderclasses.com/#';" style="position:relative;left:130px;" class="btn1" type="button">express interest</button>
+<center><button onclick="location.href = 'https://leaderclasses.com/#';" class="btn1" type="button">express interest</button></center>
 </div>
 </div>
 
-<div style="padding-left:200px;padding-right:200px;position:relative;top:100px;">
-<div class="outercontainer3">
-<p style="font-size:23px;color:#ffffff;font-family:Montserrat;text-align:center;font-weight:600;">Are you committed to investing in your Professional Growth &amp; Success?</p>
-<p style="font-size:23px;color:#ffffff;font-family:Montserrat;text-align:center;font-weight:1;line-height:.8em;">Broaden & Deepen your Leadership Foundations now !</p>
-<p style="font-size:23px;color:#ffffff;font-family:Montserrat;text-align:center;font-weight:900;line-height:2em;">Try us Risk Free. No Obligations.</p>
-<p style="font-size:20px;color:#ffffff;font-family:Montserrat;text-align:center;font-weight:1;line-height:.5em;">For a Free Preview of how we can help you become better leaders & succeed faster</p>
-<button onclick="location.href = 'https://leaderclasses.com/#';" style="position:relative;left:360px;line-height:2em;" class="btn2" type="button">sign up</button>
-<p style="font-size:23px;color:#ffffff;font-family:Montserrat;text-align:center;line-height:.5em;font-weight:900;"><strong>FREE SIGN UP BENEFITS</strong></p>
-<p style="font-size:18px;color:#ffffff;font-family:Montserrat;text-align:center;line-height:.5em;"><strong>✓ Access to Select Curated Business Videos (soon)</strong></p>
-<p style="font-size:18px;color:#ffffff;font-family:Montserrat;text-align:center;line-height:.5em;"><strong>✓ Free Subscription to Our Blog & Half Yearly Newsletter</strong></p>
-<p style="font-size:18px;color:#ffffff;font-family:Montserrat;text-align:center;line-height:.5em;"><strong>✓ Preview of Your Program in Detail, with Introductory Videos</strong></p>
-<p style="font-size:18px;color:#ffffff;font-family:Montserrat;text-align:center;line-height:.5em;"><strong>✓ Free Level Zero Course Video for Budding, Future & Emerging Leaders</strong></p>
-</div></div>
-<div style="position:relative;top:1350px;">
+<div class="row3">
 <div class="outercontainer4">
-<p style="font-size:33px;color:#ffffff;font-family:sans serif;position:absolute;left:400px;line-height:1.2em;"><strong>REPRESENTING AN INSTITUTION ?</strong></p>
-<p style="font-size:18px;color:#ffffff;font-family:sans serif;position:absolute;left:100px;top:60px;line-height:1.2em;font-weight:1;"><strong>Interested in inviting us for Speaking Engagements & Custom Crafted Corporate Leadership/Executive Development programs ?</strong></p>
-<p style="font-size:18px;color:#ffffff;font-family:sans serif;position:absolute;left:600px;top:120px;line-height:1.2em;font-weight:1;"><strong>Connect with us here</strong></p>
-<button onclick="location.href = 'https://leaderclasses.com/#';" style="position:absolute;left:580px;top:200px;" class="btn2" type="button">invite us</button>
+<p style="font-size:23px;color:#ffffff;font-family:Montserrat;text-align:center;font-weight:600;">Are you committed to investing in your Professional Growth &amp; Success?</p>
+<p style="font-size:23px;color:#ffffff;font-family:Montserrat;text-align:center;font-weight:1;">Broaden & Deepen your Leadership Foundations now !</p>
+<p style="font-size:23px;color:#ffffff;font-family:Montserrat;text-align:center;font-weight:900;">Try us Risk Free. No Obligations.</p>
+<p style="font-size:20px;color:#ffffff;font-family:Montserrat;text-align:center;font-weight:1;">For a Free Preview of how we can help you become better leaders & succeed faster</p>
+<center><button onclick="location.href = 'https://leaderclasses.com/#';"  class="btn2" type="button">sign up</button></center>
+<p style="font-size:23px;color:#ffffff;font-family:Montserrat;text-align:center;font-weight:900;"><strong>FREE SIGN UP BENEFITS</strong></p>
+<p style="font-size:18px;color:#ffffff;font-family:Montserrat;text-align:center;"><strong>✓ Access to Select Curated Business Videos (soon)</strong></p>
+<p style="font-size:18px;color:#ffffff;font-family:Montserrat;text-align:center;"><strong>✓ Free Subscription to Our Blog & Half Yearly Newsletter</strong></p>
+<p style="font-size:18px;color:#ffffff;font-family:Montserrat;text-align:center;"><strong>✓ Preview of Your Program in Detail, with Introductory Videos</strong></p>
+<p style="font-size:18px;color:#ffffff;font-family:Montserrat;text-align:center;"><strong>✓ Free Level Zero Course Video for Budding, Future & Emerging Leaders</strong></p>
+</div></div>
+
+
+<div class="row4" >
+<div class="outercontainer5" style="text-align:center" >
+<p style="font-size:33px;color:#ffffff;font-family:sans serif;"><strong>REPRESENTING AN INSTITUTION ?</strong></p>
+<p style="font-size:18px;color:#ffffff;font-family:sans serif;font-weight:1;"><strong>Interested in inviting us for Speaking Engagements & Custom Crafted Corporate Leadership/Executive Development programs ?</strong></p>
+<p style="font-size:18px;color:#ffffff;font-family:sans serif;font-weight:1;"><strong>Connect with us here</strong></p>
+<center><button onclick="location.href = 'https://leaderclasses.com/#';" class="btn2" type="button">invite us</button></center>
+</div></div>
+<div class="row">
+<div class="outercontainer6">
 </div>
-<div class="outercontainer5">
+</div>
+<div class="row">
+<div class="outercontainer7">
+<center><p style="font-size:16px;color:#ffffff;font-family:sans serif;">Feedback  |   Privacy Policy   |  T & C  |  Contact Us |  Disclaimer       Copyright 2019, Leader Classes powered by  <a style="color:#42bff4;" href="https://www.awesomefirms.com/">Awesome Firms</a></p></center>
+</div>
+</div>
 </div>
 
-<div class="outercontainer6">
-<p style="font-size:16px;color:#ffffff;font-family:sans serif;position:absolute;left:200px;top:310px;">Feedback  |   Privacy Policy   |  T & C  |  Contact Us |  Disclaimer       Copyright 2019, Leader Classes powered by  <a style="color:#42bff4;" href="https://www.awesomefirms.com/">Awesome Firms</a></p>
-</div>
-</div>
-</div>
-</div>
+<script>
+function myFunction() {
+  var x = document.getElementById("head");
+  if (x.className === "header") {
+    x.className += " responsive";
+  } else {
+    x.className = "header";
+  }
+}
+</script>
 </body>
 </html>
 
